@@ -24,7 +24,7 @@ public class Main {
             findDoublMax(matrix);
 
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println(ex);
         }
     }
 
@@ -65,7 +65,7 @@ public class Main {
     static void findDoublMax(int[][] matrix) {
         int[] arr = sortMatrix(matrix);
 
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
 
@@ -73,20 +73,19 @@ public class Main {
         if (arr[0] == arr[1] && arr[1] != arr[2]) {
             max = 1;
         }
-
         for (int i = 1; i < arr.length; i++) {
-
             if (arr[i] == arr[i + 1]) {
-                //if(arr[i] != arr[i + 2] && arr[i] != arr[i - 1])
+                if(arr[i] != arr[i + 2] && arr[i] != arr[i - 1])
                 max = i + 1;
             }
         }
-        System.out.println("dlijfv");
-        /*if (max != -1) {
+        System.out.println("after for");
+
+        if (max != -1) {
             System.out.println("Max element repeated twice: " + max);
         } else {
             System.out.println("No elements repeated twice");
-        }*/
+        }
 
     }
 }
